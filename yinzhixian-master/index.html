@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords"
+		content="jquery,jquery博客,jquery吧,jquery插件,jquery 特效,jquery 教程,jquery 效果,jquery ui,前端开发,web前端,web前端开发,天外飞仙,前端资源,html+CSS,JavaScript,html5,css3,css,css学习,css教程,浏览器兼容,php" />
+	<meta name="description" content="jQuery吧,Write Less, Do More,重注前端开发,web前端开发" />
+	<link rel="shortcut icon" href="http://www.jqueryba.com/favicon.ico" type="image/x-icon" />
+	<title>chongwen pages</title>
+	<link href="css/default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js"></script>
+	<script type="text/javascript" src="js/functions.js"></script>
+	<!-- <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+	<script>
+		document.get$(document).ready(function () {
+			var voice = document.getElementById('voice'); //获取到audio元素
+			$('.but').click(function () { //点击文字事件
+				if (voice.paused) { //判断音乐是否在播放中，暂停状态
+					voice.play(); //音乐播放
+					$('.but').text('暂停'); //切换文字
+
+				} else { //播放状态
+					voice.pause(); //音乐停止
+					$('.but').text('播放'); //切换文字
+				}
+			});
+		});
+	</script> -->
+	<script type="text/javascript">
+		function play() {
+			document.getElementById("audio").play();
+		}
+	</script>
+
+</head>
+<body>
+	<div id="music-start">	
+		<audio id="audio" src="1.mp3"></audio>
+		<div id="my-button-div">
+			<button id="mybutton"type="button"  onclick="play();"><span class="comments">/** ** ** ** this is music ** ** ** **/</span></button>
+		</div>
+	</div>
+	<p>
+	<iframe allow="autoplay" style="display:none" width="100px" height="100px" src="1.mp3"></iframe>
+	<div id="content">
+		<div id="code">
+			<span class="comments">/**</span><br />
+			<span  class="space" /><span class="comments">This webpage made at 2019-10-23, Developer =
+				Mr Sun <span class="keyword"></span></span><br />
+			<span class="comments">**/</span><br />
+			<span class="keyword">//娴娴： 我不是一个浪漫的人，希望你不要嫌弃这个礼物. </span><br /><br />
+			<span class="placeholder" /><span class="comments">从来没有送过你花，这是个心形的花，希望你能喜欢。</span><br /><br />
+			<span class="keyword">//在没风的地方找太阳，在你冷的地方做暖阳 </span><br /><br />
+			<span class="placeholder" /><span class="comments">人事纷纷，你总太天真, 往后的余生，我只要你</span><br /><br />
+			<span class="keyword">//往后余生，风雪是你</span><br /><br />
+			<span class="placeholder" /><span class="comments">平淡是你，清贫也是你, 荣华是你，心底温柔也是你</span><br /><br />
+			<span class="placeholder" /><span class="comments">目光所至，也是你</span><br /><br />
+			<span class="keyword">//想带你去看晴空万里，想大声告诉你我为你着迷</span> <br /><br />
+			<span class="placeholder" /><span class="comments"> 往事匆匆，你总会被感动, 往后的余生，我只要你</span><br /><br />
+			<span class="keyword">//往后余生，风雪是你</span><br /><br />
+			<span class="placeholder" /><span class="comments">春花是你，夏雨也是你, 秋黄是你，四季冷暖是你</span><br /><br />
+			<span class="placeholder" /><span class="comments">目光所至，也是你</span><br /><br />
+			<span class="keyword">//往后余生，风雪是你</span><br /><br />
+			<span class="placeholder" /><span class="comments">平淡是你，清贫也是你, 荣华是你，心底温柔也是你</span><br /><br />
+			<span class="placeholder" /><span class="comments">目光所至，也是你, 目光所至, 也是你</span><br /><br />
+		</div>
+		<div id="loveHeart">
+			<canvas id="garden"></canvas>
+			<div id="words">
+				<div id="messages">
+					爱了你，
+					<div id="elapseClock"></div>
+
+				</div>
+				<div id="loveu"> 愿这个数字时钟一直走下去。
+					<br />
+					<div class="signature">- 崇文</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	</div>
+	</p>
+	<script type="text/javascript">
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+		var together = new Date();
+		together.setFullYear(2019, 8, 23);
+		together.setHours(0);
+		together.setMinutes(0);
+		together.setSeconds(0);
+		together.setMilliseconds(0);
+
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+";
+			document.p.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+			document.execCommand("stop");
+		} else {
+			setTimeout(function () {
+				startHeartAnimation();
+			}, 5000);
+
+			timeElapse(together);
+			setInterval(function () {
+				timeElapse(together);
+			}, 1000);
+
+			adjustCodePosition();
+			$("#code").typewriter();
+		}
+	</script>
+	<div style="text-align:center;clear:both">	</div>
+	<!-- <audio id="voice" src="1.mp3"></audio> -->
+	<!-- <p class="but">播放</p> -->
+	<!-- <audio id="audio" src="1.mp3"></audio>
+	<div id="my-button-div"><button id="mybutton"type="button"  onclick="play();">/*********this is music*****************/</button></div> -->
+</body>
+
+
+</html>
