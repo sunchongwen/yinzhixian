@@ -17,3 +17,19 @@
 #copyright{margin-top:10px;text-align:center;width:100%;color:#666}
 #errorMsg{width:100%;text-align:center;font-size:24px;position:absolute;top:100px;left:0}
 #copyright a{color:#666}
+#mybutton{
+	background:transparent;	/*按钮背景透明*/
+	border-width:0px;	/*边框透明*/
+    outline:none;	/*点击后没边框*/
+    color:#3f7f5f;
+    font-family:"digit";
+    font-size:12px;
+}
+#my-button-div{
+    margin-left: 76.5px;
+    font-family:"digit";
+}
+#music-start{
+    padding:10px;
+    font-family:"digit";
+}
